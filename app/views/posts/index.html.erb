@@ -1,0 +1,21 @@
+<html>
+
+<head>
+  <h3>User Post</h3>
+<head>
+  <body>
+    <%@posts.each do |post|%>
+        <p><strong>Caption :</strong><%=post.caption%></p>
+        <p><strong>User :</strong><%=post.user.first_name%></p>
+        <p><strong>Id :</strong><%=post.id%></p>
+        <h4>--------------------commennts---------------------------</h4>
+        <%@comments=post.comments%>
+        <%@comments.each_with_index do |c,i|%>
+        <p><%= i %></p>
+        <p><strong>comments : </strong><%=c.content%></p>
+        <p><strong>Post_Id : </strong><%=c.post.id%></p>
+        <h4>----------------------------</h4>
+        <%end%>
+        <%end%>
+  </body>
+</html>
